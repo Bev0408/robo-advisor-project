@@ -184,6 +184,18 @@ app.get('/api/health', (req, res) => {
 });
 
 // ========================
+// Serve React Frontend (Production)
+// ========================
+
+// Serve static files from React build
+app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// Catch-all route - serve React app for any non-API routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+});
+
+// ========================
 // Database Connection & Server Start
 // ========================
 
