@@ -49,6 +49,7 @@
   resize: vertical;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   background: #fafafa;
+  color: #333;
 }
 
 .goals-textarea:focus {
